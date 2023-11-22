@@ -1,0 +1,16 @@
+<launch>
+
+  <group ns="MRP2000">
+    
+    <arg name="port" default="/dev/ttyUSB0" />
+    <arg name="baud" default="115200" />
+    
+    <node name="gsp_tech" pkg="nmea_navsat_driver" type="nmea_topic_serial_reader" output="screen">
+    
+    <param name="port" value="$(arg port)" />
+    <param name="baud" value="$(arg baud)" />
+
+    </node>
+  </group>
+
+</launch>
